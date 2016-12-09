@@ -4,9 +4,9 @@ import hw1problems
 
 
 def usage():
-	print("execute: \n\tpython main.py -p pid -f fun [-o output]")
+	print("execute: \n\tpython main.py -p pid -f fun [-o output] [-v]")
 	print("or")
-	print("python main.py -a [-o output]")
+	print("python main.py -a [-o output] [-v]")
 	print("\t-p[--problem]:  pid should range from 15 to 20")
 	print("\t-f[--function]: fun should be either `exp` or `dig`")
 	print("\t-o[--output]: output folder")
