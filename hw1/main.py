@@ -58,7 +58,7 @@ def solve_problem(config):
 	test_path = os.path.join(os.path.dirname(__file__), hw1problems.PROBLEM_DATASET_MAP[pid]["test_path"])
 
 
-	hw1problems.ini_problem(training_path, test_path, output_dir, "exp_records_new.db")
+	hw1problems.ini_problem(training_path, test_path, output_dir, "exp_records.db")
 
 
 	for x in range(0,times):

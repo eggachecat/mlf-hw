@@ -43,7 +43,7 @@ def loadFromDb(exp_category, columns):
 	
 	columnStr = str(columns).replace("'", "").replace("(", "").replace(")", "")
 	base_query = "SELECT %s FROM exp_record WHERE exp_category LIKE :exp_category" % (columnStr)
-	# print(base_query)
+
 	__cursor.execute(base_query, [exp_category])
 
 	return __cursor.fetchall()
