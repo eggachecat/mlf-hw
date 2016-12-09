@@ -42,7 +42,7 @@ def loadFromDb(exp_category, columns):
 	global __conn, __cursor
 	
 	columnStr = str(columns).replace("'", "").replace("(", "").replace(")", "")
-	base_query = "SELECT %s FROM exp_record WHERE exp_category = :exp_category" % (columnStr)
+	base_query = "SELECT %s FROM exp_record WHERE exp_category LIKE :exp_category" % (columnStr)
 	# print(base_query)
 	__cursor.execute(base_query, [exp_category])
 
@@ -67,7 +67,7 @@ def makePairs(dataPath):
 		})
 	return pairs
 
-def drawHistogram(sqlResults, key, xlabel, ylabel):
+def drawHistogram(sqlResults, key, title, xlabel, ylabel, outputDir):
 
 
 	resultArray = []
@@ -75,7 +75,8 @@ def drawHistogram(sqlResults, key, xlabel, ylabel):
 		resultArray.append(result[key])
 
 	pl.hist(resultArray, bins='auto')
-	pl.title("Histogram with %s" %(xlabel))
+	pl.title(title)
 	pl.xlabel(xlabel)
 	pl.ylabel(ylabel)
-	pl.show()
+	pl.savefig(("%s/%s.png")%(outputDir, title))
+	print(("save %s/%s.png")%(outputDir, title))

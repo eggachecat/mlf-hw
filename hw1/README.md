@@ -13,8 +13,11 @@ hw1 的代码 <br>
 
 执行
 -------
-cd current-folder
-python main.py
+
+```
+	cd current-folder
+	python main.py
+```
 
 
 資料庫結構
