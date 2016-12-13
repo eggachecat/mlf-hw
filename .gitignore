@@ -3,4 +3,4 @@ __pycache__/
 *.py[cod]
 
 # no need to upload to github
-all_outout/
+**/all_outout/
