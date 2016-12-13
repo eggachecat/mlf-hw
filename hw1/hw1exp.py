@@ -34,11 +34,15 @@ def pla_exp(dataPairs, alpha, random, countUpdates):
 					indexUpdateCtr[i] = 0
 				indexUpdateCtr[i] += 1
 
+
 	if countUpdates:
 		print(indexUpdateCtr)
-		maxIndex = max(indexUpdateCtr, key=indexUpdateCtr.get)
-		print("The index that results in the most number of update is %d" % (maxIndex))
+		maxValue = max(list(indexUpdateCtr.values()))
+		print(maxValue)
 
+		for index, value in indexUpdateCtr.items():
+			if value == maxValue:
+				print("The index that results in the most number of update is %d" % (index))
 
 	# print("updateCtr = %d when pla halted" %(updateCtr, solution.test(dataPairs)))
 	return str(solution.weight), updateCtr

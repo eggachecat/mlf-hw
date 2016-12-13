@@ -12,7 +12,7 @@ class PLA():
 
 	def activate(self, x):
 		# sign function
-		return (-1 if x < 0 else 1)
+		return (1 if x > 0 else -1)
 
 	def forward(self, dataInput):
 
