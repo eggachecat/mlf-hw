@@ -17,7 +17,7 @@ def solve_all(config):
 
 	pMap = hw1problems.PROBLEM_ALGORITHM_MAP
 	for pid in pMap:
-		for op in pMap[pid]:
+		for op in ["exp", "dig"]:
 			solve_problem({
 				"output": config["output"],
 				"verbose": config["verbose"],
