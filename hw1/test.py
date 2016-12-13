@@ -7,8 +7,6 @@ def test_problem_15():
 	print("test_problem_15")
 	sys.argv[1:] = ['-p', '15', '-f', 'exp']
 	main.main()
-	sys.argv[1:] = ['-p', '15', '-f', 'dig']
-	main.main()
 
 def test_problem_16():
 	print("test_problem_16")

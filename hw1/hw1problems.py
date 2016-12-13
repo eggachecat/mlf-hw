@@ -31,13 +31,16 @@ def ini_problem(traingPath, testPath, outputDir, dbname):
 
 
 # exp for problem 15, 16, 17
-def problem_pla_exp(alpha, exp_category, random = False, rollNum = 0):
+def problem_pla_exp(alpha, exp_category, random = False, countUpdates = False):
 
 	global GLOBAL_TRAINING_DATAPAIRS
 	global GLOBAL_TEST_DATAPAIRS
 
-	perception_structure, numer_of_updates = hw1exp.pla_exp(GLOBAL_TRAINING_DATAPAIRS, alpha, random, rollNum)
-	hw1io.saveExp(perception_structure, numer_of_updates, 0, alpha, exp_category)
+	perception_structure, numer_of_updates = hw1exp.pla_exp(GLOBAL_TRAINING_DATAPAIRS, alpha, random, countUpdates)
+
+	# Just in case of problem 15
+	if not countUpdates:
+		hw1io.saveExp(perception_structure, numer_of_updates, 0, alpha, exp_category)
 
 # dig for problem 15, 16, 17
 def problem_pla_digram(exp_category):
@@ -81,32 +84,106 @@ def problem_15_exp():
 		problem_pla_exp(1, "problem_15-roll_%d" %(i), False, i)
 
 
+# PROBLEM_ALGORITHM_MAP = {
+# 	"15": {
+# 		"exp": (problem_pla_exp, [1, "problem_15", False, True])
+# 	},
+# 	"16": {
+# 		"exp": (problem_pla_exp, [1, "problem_16", True]),
+# 		"dig": (problem_pla_digram, ["problem_16"])
+# 	},
+# 	"17": {
+# 		"exp": (problem_pla_exp, [0.25, "problem_17", True]),
+# 		"dig": (problem_pla_digram, ["problem_17"])
+# 	},
+# 	"18": {
+# 		"exp": (problem_pocket_exp, [1, 50, "problem_18"]),
+# 		"dig": (problem_pocket_digram, ["problem_18"])
+# 	},
+# 	"19": {
+# 		"exp": (problem_pocket_exp, [1, 100, "problem_19"]),
+# 		"dig": (problem_pocket_digram, ["problem_19"])
+# 	},
+# 	"20": {
+# 		"exp": (problem_pocket_exp, [1, 100, "problem_20", False]),
+# 		"dig": (problem_pocket_digram, ["problem_20"])
+# 	}
+# }
+
+
 PROBLEM_ALGORITHM_MAP = {
 	"15": {
-		"exp": (problem_15_exp, []),
-		"dig": (problem_pla_digram, ["problem_15"])
+		"exp": {
+			"fun": problem_pla_exp,
+			"default_times": 1,
+			"parameters": [1, "problem_15", False, True]
+		}
 	},
 	"16": {
-		"exp": (problem_pla_exp, [1, "problem_16", True]),
-		"dig": (problem_pla_digram, ["problem_16"])
+		"exp": {
+			"fun": problem_pla_exp,
+			"default_times": 2000,
+			"parameters": [1, "problem_16", True]
+		},
+		"dig": {
+			"fun": problem_pla_digram,
+			"default_times": 1,
+			"parameters": ["problem_16"]
+		}
 	},
 	"17": {
-		"exp": (problem_pla_exp, [1, "problem_17", True]),
-		"dig": (problem_pla_digram, ["problem_17"])
+		"exp": {
+			"fun": problem_pla_exp,
+			"default_times": 2000,
+			"parameters": [0.25, "problem_17", True]
+		},
+		"dig": {
+			"fun": problem_pla_digram,
+			"default_times": 1,
+			"parameters": ["problem_17"]
+		}
 	},
 	"18": {
-		"exp": (problem_pocket_exp, [1, 50, "problem_18"]),
-		"dig": (problem_pocket_digram, ["problem_18"])
+		"exp": {
+			"fun": problem_pocket_exp,
+			"default_times": 2000,
+			"parameters": [1, 50, "problem_18"]
+		},
+		"dig": {
+			"fun": problem_pocket_digram,
+			"default_times": 1,
+			"parameters": ["problem_18"]
+		}
 	},
 	"19": {
-		"exp": (problem_pocket_exp, [1, 100, "problem_19"]),
-		"dig": (problem_pocket_digram, ["problem_19"])
+		"exp": {
+			"fun": problem_pocket_exp,
+			"default_times": 2000,
+			"parameters": [1, 100, "problem_19"]
+		},
+		"dig": {
+			"fun": problem_pocket_digram,
+			"default_times": 1,
+			"parameters": ["problem_19"]
+		}
 	},
 	"20": {
-		"exp": (problem_pocket_exp, [1, 100, "problem_20", False]),
-		"dig": (problem_pocket_digram, ["problem_20"])
+		"exp": {
+			"fun": problem_pocket_exp,
+			"default_times": 2000,
+			"parameters": [1, 100, "problem_20", False]
+		},
+		"dig": {
+			"fun": problem_pocket_digram,
+			"default_times": 1,
+			"parameters": ["problem_20"]
+		}
 	}
 }
+
+
+
+
 
 PROBLEM_DATASET_MAP = {
 	"15" : {
