@@ -117,6 +117,11 @@ PROBLEM_ALGORITHM_MAP = {
 			"fun": problem_pla_exp,
 			"default_times": 1,
 			"parameters": [1, "problem_15", False, True]
+		},
+		"dig": {
+			"fun": problem_pla_exp,
+			"default_times": 0,
+			"parameters": [1, "problem_15", False, True]
 		}
 	},
 	"16": {
