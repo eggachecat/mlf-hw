@@ -26,7 +26,7 @@ def createTable():
 	global __cursor
 	__cursor.execute('''CREATE TABLE exp_record
 			            (exp_id INTEGER PRIMARY KEY NOT NULL, 
-			            perception_structure TEXT, numer_of_updates INTEGER, err_rate REAL, alpha INTEGER, 
+			            perception_structure TEXT, number_of_updates INTEGER, err_rate REAL, alpha INTEGER, 
 			            exp_category TEXT)''')
 
 def saveExp(perception_structure, numer_of_updates, err_rate, alpha, exp_category):
@@ -79,4 +79,4 @@ def drawHistogram(sqlResults, key, title, xlabel, ylabel, outputDir):
 	pl.xlabel(xlabel)
 	pl.ylabel(ylabel)
 	pl.savefig(("%s/%s.png")%(outputDir, title))
-	print(("save %s/%s.png")%(outputDir, title))
+	print(("Saved result to %s/%s.png")%(outputDir, title))

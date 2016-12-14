@@ -3,13 +3,14 @@ hw1
 #介紹
 -------
 hw1 的代码 <br>
-實驗結果會在output文件夾下
+實驗結果在[all_output](all_output/)文件夾下 <br>
 
 #預安裝
 -------
 [Python 3.5.1](https://www.python.org/) <br>
 [numpy](https://github.com/numpy/numpy)	<br>
 [matplotlib](https://github.com/matplotlib/matplotlib) <br>
+
 
 #测试
 -------
