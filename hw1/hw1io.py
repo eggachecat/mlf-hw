@@ -29,11 +29,11 @@ def createTable():
 			            perception_structure TEXT, number_of_updates INTEGER, err_rate REAL, alpha INTEGER, 
 			            exp_category TEXT)''')
 
-def saveExp(perception_structure, numer_of_updates, err_rate, alpha, exp_category):
+def saveExp(perception_structure, number_of_updates, err_rate, alpha, exp_category):
 	global __conn, __cursor
 	
-	__cursor.execute('''INSERT INTO exp_record(perception_structure, numer_of_updates, err_rate, alpha, exp_category)
-				 VALUES(?, ?, ?, ?, ?)''', (perception_structure, numer_of_updates, err_rate, alpha, exp_category))
+	__cursor.execute('''INSERT INTO exp_record(perception_structure, number_of_updates, err_rate, alpha, exp_category)
+				 VALUES(?, ?, ?, ?, ?)''', (perception_structure, number_of_updates, err_rate, alpha, exp_category))
 
 	__conn.commit()
 
