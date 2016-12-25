@@ -99,9 +99,9 @@ class DSA():
 
 		# make sure dataset splits line into N+1 areas
 		dichotomies = np.insert(x, 0, negBorder)
-		dichotomies = np.append(x, posBorder)
+		dichotomies = np.append(dichotomies, posBorder)
 		# let theta be the center of two values
-		dichotomies = (x + np.roll(x, -1)) / 2
+		dichotomies = (dichotomies + np.roll(dichotomies, -1)) / 2
 		dichotomies = np.delete(dichotomies, -1)
 		logging.debug("dichotomies are %s", (str(dichotomies)))
 
