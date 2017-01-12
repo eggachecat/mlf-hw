@@ -17,9 +17,9 @@ hw3_reg.py 對應作業Q13-Q20 <br>
 -------
 
 ```
-<!-- Q16-Q20 -->
+<!-- Q11-Q12 -->
 	python hw3_logistic_regression.py
-<!-- Q4 -->
+<!-- Q13-Q20 -->
 	python hw3_reg.py
 ```
 #project文件說明
